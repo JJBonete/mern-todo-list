@@ -6,13 +6,13 @@ const connectDB = require("./config/db");
 const app = express();
 
 // routes
-const todo = require("./routes/todo");
+const todo = require("./routes/todo.routes");
 
 // connect database
 connectDB();
 
 //authenticaion
-app.use(require("./routes/auth"));
+app.use(require("./routes/auth.routes"));
 
 
 app.use(cors({ origin: true, credentials: true }));
