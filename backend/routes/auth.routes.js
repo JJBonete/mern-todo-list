@@ -1,6 +1,13 @@
-const User = require("../models/users.models");
 const bcrypt = require("bcrypt");
 const router = express.Router();
+const User = require("../models/users.models")
+
+// const{
+//     getAllTodo,
+//     postCreateTodo,
+//     putUpdateTodo,
+//     deleteTodo,
+// } = require("../controller/user.controller");
 
 
 // Register a new user

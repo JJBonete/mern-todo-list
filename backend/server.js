@@ -6,10 +6,14 @@ const connectDB = require("./config/db");
 const app = express();
 
 // routes
-const todo = require("./routes/todo"); 
+const todo = require("./routes/todo");
 
 // connect database
 connectDB();
+
+//authenticaion
+app.use(require("./routes/auth"));
+
 
 app.use(cors({ origin: true, credentials: true }));
 
@@ -18,7 +22,7 @@ app.use(express.json({ extended: false }));
 app.get("/", (req, res) => res.send("Server up and running"));
 
 // use routes
-app.use("/api/todo", todo); 
+app.use("/api/todo", todo);
 
 // setting up port
 const PORT = process.env.PORT || 8000;
