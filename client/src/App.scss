@@ -67,6 +67,7 @@ button {
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
+  
 
   border: none;
   border-radius: 0.5rem;
@@ -124,8 +125,10 @@ button {
 
 .list-container {
   display: flex;
-
-  flex-direction: column;
+  flex-flow: column wrap;
+  overflow: auto;;
+  flex-direction: row;
+  
 
   li {
     background-color: hsl(0, 0%, 100%);
@@ -133,6 +136,7 @@ button {
 
     display: flex;
     flex-direction: column;
+    
     justify-content: space-between;
 
     padding: 2rem;
@@ -169,18 +173,24 @@ button {
   }
 
   @media only screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    gap: 2rem;
-    width: 60rem;
-
-    margin: 0 auto;
+    .list-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      gap: 1.5rem;
+      width: 60rem;  
+      margin: 0 auto;
+    }
   }
-
+  
   @media only screen and (min-width: 992px) {
-    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
-    width: 120rem;
+    .list-container {
+      grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+      gap: 2rem;
+      width: 120rem;
+    }
   }
+
+  
 }
 
 .form-container {
@@ -198,6 +208,8 @@ button {
 
   .input {
     margin-bottom: 2rem;
+    padding: 15px;
+    box-sizing: border-box; 
   }
 }
 
@@ -229,7 +241,7 @@ button {
 
     .close {
       grid-area: close;
-      color: white;
+      color: rgb(255, 255, 255);
       font-weight: 700;
 
       display: flex;
@@ -249,4 +261,5 @@ button {
 .p {
   font-size: 15px;
 }
+
 

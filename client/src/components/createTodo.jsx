@@ -52,14 +52,14 @@ export function CreateTodo() {
                     <label className="label" htmlFor="description">
                         Description
                     </label>
-                    <input
+                    <textarea
                         type="text"
                         name="description"
                         value={data.description}
                         onChange={handleChange}
                         className="input"
                     />
-                    <button type="submit" className="button button-size">
+                    <button type="submit" className="button">
                         create todo
                     </button>
                 </form>
