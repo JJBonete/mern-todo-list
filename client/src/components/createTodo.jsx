@@ -59,7 +59,7 @@ export function CreateTodo() {
                         onChange={handleChange}
                         className="input"
                     />
-                    <button type="submit" className="button">
+                    <button type="submit" className="button button-size">
                         create todo
                     </button>
                 </form>

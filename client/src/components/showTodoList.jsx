@@ -9,8 +9,9 @@ function TodoCard({ data, handleEdit, handleDelete }) {
     return (
         <li key={_id}>
             <div className="title-description">
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <h1>{title}</h1>
+                <br/>
+                <p className="p">{description}</p>
             </div>
 
             <div className="button-container">

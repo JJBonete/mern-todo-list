@@ -52,7 +52,7 @@ export function UpdateTodo({ _id, handleClose, handleUpdate }) {
                 className="input"
                 onChange={handleChange}
             />
-            <button type="submit" className="button">
+            <button type="submit" className="button button-size">
                 Submit
             </button>
         </form>
