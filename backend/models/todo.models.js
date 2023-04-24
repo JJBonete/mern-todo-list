@@ -1,12 +1,14 @@
 const mongoose = require("mongoose")
 
 const TodoSchema = new mongoose.Schema({
-    title:{
-        type:"String",
+    title: {
+        type: "String",
         require: true
     },
     description: {
-        type: "String"
+        type: "String",
+        require: true
+
     }
 })
 
