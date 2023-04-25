@@ -1,17 +1,18 @@
 const User = require("../models/users.models");
 
 exports.getAllUser = (req, res) => {
-    User.find()
+    return User.find()
         .then((user) => res.json(user))
         .catch((err) =>
             res
             .status(404)
             .json({ message: "User not found", error: err.message })
+            
         );
 };
 
 exports.postCreateUser = (req, res) => {
-    User.create(req.body)
+    return User.create(req.body)
         .then((data) => res.json({ message: "User added successfully", data }))
         .catch((err) =>
             res
@@ -21,7 +22,7 @@ exports.postCreateUser = (req, res) => {
 };
 
 exports.putUpdateUser = (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body)
+    return User.findByIdAndUpdate(req.params.id, req.body)
         .then((data) => res.json({ message: "updated successfully", data }))
         .catch((err) =>
             res
@@ -31,7 +32,7 @@ exports.putUpdateUser = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-    User.findByIdAndRemove(req.params.id, req.body)
+    return User.findByIdAndRemove(req.params.id, req.body)
         .then((data) =>
             res.json({ message: "user deleted successfully", data })
         )

@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
   try {
     // Find the user by username
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(400).json("Wrong credentials!");
+    !user && res.status(400).json("User not found");
 
     // Check the password
     const validPassword = await bcrypt.compare(
@@ -39,6 +39,7 @@ router.post("/login", async (req, res) => {
     !validPassword && res.status(400).json("Wrong credentials!");
 
     // Respond with the user object
+    // delete & remove password
     res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);

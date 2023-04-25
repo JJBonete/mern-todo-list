@@ -11,9 +11,8 @@ const todo = require("./routes/todo.routes");
 // connect database
 connectDB();
 
-//authenticaion
-app.use(require("./routes/auth.routes"));
-
+//authentication
+const user = require("./routes/auth.routes");
 
 app.use(cors({ origin: true, credentials: true }));
 
@@ -23,10 +22,11 @@ app.get("/", (req, res) => res.send("Server up and running"));
 
 // use routes
 app.use("/api/todo", todo);
+app.use("/api/user", user);
 
 // setting up port
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
-    console.log(`server is running on http://localhost:${PORT}`);
+  console.log(`server is running on http://localhost:${PORT}`);
 });

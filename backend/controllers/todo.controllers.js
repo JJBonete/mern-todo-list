@@ -1,7 +1,7 @@
 const Todo = require("../models/todo.models");
 
 exports.getAllTodo = (req, res) => {
-    Todo.find()
+    return  Todo.find()
         .then((todo) => res.json(todo))
         .catch((err) =>
             res
@@ -11,7 +11,7 @@ exports.getAllTodo = (req, res) => {
 };
 
 exports.postCreateTodo = (req, res) => {
-    Todo.create(req.body)
+    return  Todo.create(req.body)
         .then((data) => res.json({ message: "Todo added successfully", data }))
         .catch((err) =>
             res
@@ -21,7 +21,7 @@ exports.postCreateTodo = (req, res) => {
 };
 
 exports.putUpdateTodo = (req, res) => {
-    Todo.findByIdAndUpdate(req.params.id, req.body)
+    return Todo.findByIdAndUpdate(req.params.id, req.body)
         .then((data) => res.json({ message: "updated successfully", data }))
         .catch((err) =>
             res
@@ -31,7 +31,7 @@ exports.putUpdateTodo = (req, res) => {
 };
 
 exports.deleteTodo = (req, res) => {
-    Todo.findByIdAndRemove(req.params.id, req.body)
+    return Todo.findByIdAndRemove(req.params.id, req.body)
         .then((data) =>
             res.json({ message: "todo deleted successfully", data })
         )
