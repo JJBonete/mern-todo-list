@@ -1,10 +1,10 @@
 // client/src/components/SignIn.jsx
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../AuthContext";
 import axios from "axios";
 
 const SignIn = () => {
-    const { login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,36 +25,32 @@ const SignIn = () => {
   };
 
   return (
-  
     <section className="update-container">
-    <div className="update-contents">
-
+      <div className="update-contents">
         <form className="form-container">
-
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-         className="input"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-        />
-        <input
-         className="input"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button className="button button-size" type="submit">Sign In</button>
-      </form>
-      </form>
-
+          <h2>Sign In</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              className="input"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+            />
+            <input
+              className="input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+            <button className="button button-size" type="submit">
+              Sign In
+            </button>
+          </form>
+        </form>
       </div>
-      </section>
-
-  
+    </section>
   );
 };
 

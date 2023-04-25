@@ -55,9 +55,13 @@ export function UpdateTodo({ _id, handleClose, handleUpdate }) {
       <button type="submit" className="button button-margin">
         Submit
       </button>
-      <button type="button" className="button button-margin" onClick={handleClose}>
-    Cancel
-  </button>
+      <button
+        type="button"
+        className="button button-margin"
+        onClick={handleClose}
+      >
+        Cancel
+      </button>
     </form>
   );
 }
