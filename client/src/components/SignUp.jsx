@@ -28,7 +28,7 @@ const SignUp = () => {
   
       // Redirect to homepage on successful registration
       if (res.status === 200) {
-        history.push("/");
+        history.push("/signin");
       }
     } catch (err) {
       console.log(err);

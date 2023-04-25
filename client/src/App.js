@@ -14,8 +14,8 @@ function App() {
     <AuthProvider>
       <div className="App">
         <BrowserRouter>
-          <Route path="/signup" component={SignUp} />
-          <Route exact path="/" component={SignIn} />
+          <Route exact path="/" component={SignUp} />
+          <Route  path="/signin" component={SignIn} />
 
           <Route  path="/home" component={ShowTodoList} />
           <Route path="/create-todo" component={CreateTodo} />
