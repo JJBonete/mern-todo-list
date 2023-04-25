@@ -6,23 +6,36 @@ const bcrypt = require("bcrypt");
 // Register a new user
 router.post("/register", async (req, res) => {
   try {
-    // Hash the password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const { username, password } = req.body;
 
-    // Create a new user
-    const newUser = new User({
-      username: req.body.username,
+    // Check if user already exists
+    const userExists = await User.findOne({ username });
+    if (userExists) {
+      return res.status(400).json({ error: 'User already exists' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create new user
+    const user = new User({
+      username,
       password: hashedPassword,
     });
+    await user.save();
 
-    // Save the user and respond with the new user object
-    const user = await newUser.save();
-    res.status(200).json(user);
+    // Send success response
+    res.json({ message: 'User created successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    // Check if response has already been sent
+    if (!res.headersSent) {
+      // Send error response
+      res.status(500).json({ error: 'Server error' });
+    }
   }
 });
+
 
 // Login a user
 router.post("/login", async (req, res) => {
@@ -45,5 +58,6 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

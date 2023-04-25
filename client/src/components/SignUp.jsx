@@ -2,33 +2,45 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../AuthContext";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 const SignUp = () => {
   const { login } = useContext(AuthContext);
-
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
+    console.log(handleSubmit)
     e.preventDefault();
+    
     login(username, password);
+    
     try {
       const res = await axios.post("http://localhost:8000/api/user/register", {
         username,
         password,
       });
+      
       console.log(res.data);
+      login(username, password);
+  
+      // Redirect to homepage on successful registration
+      if (res.status === 200) {
+        history.push("/");
+      }
     } catch (err) {
       console.log(err);
     }
   };
+  
 
   return (
     <section className="update-container">
       <div className="update-contents">
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <h2> Sign Up </h2>
-          <form onSubmit={handleSubmit}>
             <input
               className="input"
               type="text"
@@ -48,7 +60,6 @@ const SignUp = () => {
               Sign Up{" "}
             </button>
           </form>
-        </form>
       </div>
     </section>
   );

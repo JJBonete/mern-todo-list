@@ -50,6 +50,7 @@ export function CreateTodo() {
             Description
           </label>
           <textarea
+            spellCheck="true"
             type="text"
             name="description"
             value={data.description}

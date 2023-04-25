@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/user/");
+        const res = await axios.post("http://localhost:8000/api/user/");
         setUser(res.data);
       } catch (err) {
         console.log(err);

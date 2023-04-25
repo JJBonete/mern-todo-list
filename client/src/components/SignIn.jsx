@@ -1,10 +1,10 @@
-// client/src/components/SignIn.jsx
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../AuthContext";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
-
 const SignIn = () => {
   const { login } = useContext(AuthContext);
+  const history = useHistory();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,13 +12,15 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     login(username, password);
-
     try {
       const res = await axios.post("http://localhost:8000/api/user/login", {
         username,
         password,
       });
       console.log(res.data);
+      if (res.status === 200) {
+        history.push("/home");
+      }
     } catch (err) {
       console.log(err);
     }
@@ -27,9 +29,8 @@ const SignIn = () => {
   return (
     <section className="update-container">
       <div className="update-contents">
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <h2>Sign In</h2>
-          <form onSubmit={handleSubmit}>
             <input
               className="input"
               type="text"
@@ -47,7 +48,6 @@ const SignIn = () => {
             <button className="button button-size" type="submit">
               Sign In
             </button>
-          </form>
         </form>
       </div>
     </section>

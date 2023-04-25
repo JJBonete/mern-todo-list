@@ -42,15 +42,18 @@ export function UpdateTodo({ _id, handleClose, handleUpdate }) {
         name="title"
         className="input"
         onChange={handleChange}
+        placeholder="title"
       />
       <label htmlFor="description" className="label">
         Description
       </label>
       <textarea
+        spellCheck="true"
         type="text"
         name="description"
         className="input-description"
         onChange={handleChange}
+        placeholder="description"
       />
       <button type="submit" className="button button-margin">
         Submit

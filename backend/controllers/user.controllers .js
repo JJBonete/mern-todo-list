@@ -33,12 +33,9 @@ exports.putUpdateUser = (req, res) => {
 
 exports.deleteUser = (req, res) => {
     return User.findByIdAndRemove(req.params.id, req.body)
-        .then((data) =>
-            res.json({ message: "user deleted successfully", data })
-        )
-        .catch((err) =>
-            res
-            .status(404)
-            .json({ message: "book not found", error: err.message })
-        );
-};
+      .then((data) => res.json({ message: "user deleted successfully", data }))
+      .catch((err) =>
+        res.status(404).json({ message: "user not found", error: err.message })
+      );
+  };
+  
