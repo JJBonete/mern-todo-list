@@ -48,6 +48,7 @@ export function CreateTodo() {
                         value={data.title}
                         onChange={handleChange}
                         className="input"
+                        placeholder="title"
                     />
                     <label className="label" htmlFor="description">
                         Description
@@ -57,9 +58,11 @@ export function CreateTodo() {
                         name="description"
                         value={data.description}
                         onChange={handleChange}
-                        className="input"
+                        className="input-description"
+                        placeholder="description"
+
                     />
-                    <button type="submit" className="button">
+                    <button type="submit" className="button button-size">
                         create todo
                     </button>
                 </form>

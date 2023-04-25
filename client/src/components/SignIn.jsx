@@ -25,24 +25,36 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+  
+    <section className="update-container">
+    <div className="update-contents">
+
+        <form className="form-container">
+
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
         <input
+         className="input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
         />
         <input
+         className="input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button type="submit">Sign In</button>
+        <button className="button button-size" type="submit">Sign In</button>
       </form>
-    </div>
+      </form>
+
+      </div>
+      </section>
+
+  
   );
 };
 

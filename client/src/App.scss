@@ -76,6 +76,22 @@ button {
   width: 24rem;
 }
 
+.input-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  
+
+  border: none;
+  border-radius: 0.5rem;
+
+  height: 10rem;
+  width: 24rem;
+}
+
+
+
 .button {
   display: flex;
   margin: 0;
@@ -106,6 +122,10 @@ button {
 
 .button-size{
     font-size: 25px;
+}
+
+.button-margin{
+    margin: 10px;
 }
 
 .contents {
@@ -207,6 +227,12 @@ button {
   }
 
   .input {
+    margin-bottom: 2rem;
+    padding: 15px;
+    box-sizing: border-box; 
+  }
+
+  .input-description {
     margin-bottom: 2rem;
     padding: 15px;
     box-sizing: border-box; 

@@ -49,12 +49,15 @@ export function UpdateTodo({ _id, handleClose, handleUpdate }) {
       <textarea
         type="text"
         name="description"
-        className="input"
+        className="input-description"
         onChange={handleChange}
       />
-      <button type="submit" className="button ">
+      <button type="submit" className="button button-margin">
         Submit
       </button>
+      <button type="button" className="button button-margin" onClick={handleClose}>
+    Cancel
+  </button>
     </form>
   );
 }
