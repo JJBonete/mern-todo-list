@@ -1,6 +1,7 @@
 // client/src/components/SignIn.jsx
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { AuthContext } from "../AuthContext";
+import axios from "axios";
 
 const SignIn = () => {
     const { login } = useContext(AuthContext);

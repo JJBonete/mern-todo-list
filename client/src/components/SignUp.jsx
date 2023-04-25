@@ -1,5 +1,5 @@
 // client/src/components/SignUp.jsx
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../AuthContext";
 
 const SignUp = () => {
@@ -15,7 +15,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <h2> Sign Up </h2>{" "}
+      <h2> Sign Up </h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -29,8 +29,8 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button type="submit"> Sign Up </button>{" "}
-      </form>{" "}
+        <button type="submit"> Sign Up </button>
+      </form>
     </div>
   );
 };
