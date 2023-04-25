@@ -2,7 +2,6 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import { AuthProvider } from "./AuthContext";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { ShowTodoList } from "./components/showTodoList";
@@ -11,7 +10,6 @@ import "./App.scss";
 
 function App() {
   return (
-    <AuthProvider>
       <div className="App">
         <BrowserRouter>
           <Route exact path="/" component={SignUp} />
@@ -21,7 +19,6 @@ function App() {
           <Route path="/create-todo" component={CreateTodo} />
         </BrowserRouter>
       </div>
-    </AuthProvider>
   );
 }
 
