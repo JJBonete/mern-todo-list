@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
+// do not separate, this file is already the controller
+// follow auth.routes
+
 const {
     getAllTodo,
     postCreateTodo,
     putUpdateTodo,
     deleteTodo,
-} = require("../controllers/todo");
+} = require("../controllers/todo.controllers");
 
 /**
  * @route GET api/todo
@@ -27,13 +30,13 @@ router.post("/", postCreateTodo);
  * @description update todo
  * @access public
  */
-router.put("/:id", putUpdateTodo);
+router.put("/id:", putUpdateTodo);
 
 /**
  * @route DELETE api/todo/:id
  * @description delete todo
  * @access public
  */
-router.delete("/:id", deleteTodo);
+router.delete("/id:", deleteTodo);
 
 module.exports = router;
