@@ -66,13 +66,27 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform: capitalize;
-  
+  font-family: "Secular One", sans-serif;
+  border: 1px solid rgb(210, 210, 210);
 
   border: none;
   border-radius: 0.5rem;
 
   height: 4rem;
+  width: 24rem;
+}
+
+.input-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Secular One", sans-serif;
+  border: 1px solid rgb(210, 210, 210);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  height: 10rem;
   width: 24rem;
 }
 
@@ -93,8 +107,6 @@ button {
   display: flex;
   justify-self: center;
   margin: 30px;
-
-
 }
 
 .button-new {
@@ -104,8 +116,12 @@ button {
   margin: 30px;
 }
 
-.button-size{
-    font-size: 25px;
+.button-size {
+  font-size: 25px;
+}
+
+.button-margin {
+  margin: 10px;
 }
 
 .contents {
@@ -126,17 +142,17 @@ button {
 .list-container {
   display: flex;
   flex-flow: column wrap;
-  overflow: auto;;
+  overflow: auto;
   flex-direction: row;
-  
 
   li {
     background-color: hsl(0, 0%, 100%);
     border-radius: 0.5rem;
+    
 
     display: flex;
     flex-direction: column;
-    
+
     justify-content: space-between;
 
     padding: 2rem;
@@ -148,6 +164,7 @@ button {
     outline: solid 1px;
 
     margin: 0 auto 2rem;
+    margin-top: 5px;
     .title-description {
       text-align: left;
 
@@ -177,11 +194,11 @@ button {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
       gap: 1.5rem;
-      width: 60rem;  
+      width: 60rem;
       margin: 0 auto;
     }
   }
-  
+
   @media only screen and (min-width: 992px) {
     .list-container {
       grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
@@ -189,8 +206,6 @@ button {
       width: 120rem;
     }
   }
-
-  
 }
 
 .form-container {
@@ -209,7 +224,15 @@ button {
   .input {
     margin-bottom: 2rem;
     padding: 15px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    border: 1px solid rgb(210, 210, 210);
+  }
+
+  .input-description {
+    margin-bottom: 2rem;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid rgb(210, 210, 210);
   }
 }
 
@@ -260,6 +283,6 @@ button {
 
 .p {
   font-size: 15px;
+  text-align: center;
+  padding: 10px 20px;
 }
-
-
