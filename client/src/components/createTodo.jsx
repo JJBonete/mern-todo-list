@@ -27,7 +27,7 @@ export function CreateTodo() {
 
   return (
     <section className="container">
-      <Link to="/">
+      <Link to="/home">
         <button type="button" className="button button-back">
           back
         </button>
