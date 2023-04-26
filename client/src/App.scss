@@ -148,7 +148,6 @@ button {
   li {
     background-color: hsl(0, 0%, 100%);
     border-radius: 0.5rem;
-    
 
     display: flex;
     flex-direction: column;
@@ -163,8 +162,9 @@ button {
 
     outline: solid 1px;
 
-    margin: 0 auto 2rem;
-    margin-top: 5px;
+    margin: 0 15px 20px 15px;
+
+    // margin: auto;
     .title-description {
       text-align: left;
 

@@ -30,13 +30,13 @@ router.post("/", postCreateTodo);
  * @description update todo
  * @access public
  */
-router.put("/id:", putUpdateTodo);
+router.put("/:id", putUpdateTodo);
 
 /**
  * @route DELETE api/todo/:id
  * @description delete todo
  * @access public
  */
-router.delete("/id:", deleteTodo);
+router.delete("/:id", deleteTodo);
 
 module.exports = router;
